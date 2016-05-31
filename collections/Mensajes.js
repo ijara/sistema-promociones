@@ -88,5 +88,11 @@ MensajeSchema = new SimpleSchema({
   }
 });
 
+Meteor.methods({
+  deleteTag: function (id) {
+    Tags.remove({_id:id});
+  }
+});
+
 Mensajes.attachSchema ( MensajeSchema );
 Tags.attachSchema( Tag );

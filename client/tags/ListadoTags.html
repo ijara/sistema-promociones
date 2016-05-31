@@ -1,0 +1,41 @@
+<template name="ListadoTags">
+  <table class="table">
+    <thead>
+      <td>
+        id
+      </td>
+      <td>
+        nombre
+      </td>
+      <td>
+        id empresa
+      </td>
+      <td>
+        borrar
+      </td>
+    </thead>
+    <tbody>
+      {{#each tags}}
+        <tr>
+          <td>
+            {{_id}}
+          </td>
+          <td>
+            {{nombre}}
+          </td>
+          <td>
+            {{empresa}}
+          </td>
+          <td>
+            <i class="glyphicon glyphicon-trash fa-trash" onClick="alerta()"></i>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <script charset="utf-8">
+    function alerta() {
+      confirm("¿Esta seguro?");
+    }
+  </script>
+</template>
