@@ -31,7 +31,6 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons
 zimme:active-route
@@ -48,3 +47,4 @@ natestrauser:select2
 mpowaga:autoform-autocomplete
 
 #yogiben:autoform-tags
+ian:accounts-ui-bootstrap-3
