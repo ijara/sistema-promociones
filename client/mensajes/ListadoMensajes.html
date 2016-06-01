@@ -1,6 +1,24 @@
 <template name="ListadoMensajes">
-  {{#each mensajes}}
-    {{createdAt}}
-  {{/each}}
-
+  <div class="container">
+    <div class="row">
+      {{#each mensajes}}
+        <div id="mensaje">
+          <div id="foto" class="col-md-4">
+            <img src="{{_id}}" alt="..." class="img-thumbnail">
+          </div>
+          <div id="texto" class="col-md-8">
+            {{desc}}
+          </div>
+          <div id="tags" class="col-md-12">
+            {{#each tags}}
+              {{this}}
+            {{/each}}
+          </div>
+          <div id="foot" class="col-md-12">
+            {{createdAt}} | <a href="{{_id}}">{{_id}}</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
 </template>
