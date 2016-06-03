@@ -1,5 +1,3 @@
-Meteor.subscribe('tags');
-
 Template.ListadoTags.helpers({
   tags: ()=> {
        return Tags.find({});

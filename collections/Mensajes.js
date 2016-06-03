@@ -11,6 +11,16 @@ Tags.allow({
   }
 });
 
+Files = new FS.Collection("files", {
+  stores: [new FS.Store.GridFS("filesStore")]
+});
+
+Files.allow({
+  download: function () {
+    return true;
+  },
+  fetch: null
+});
 
 
 Mensajes = new Mongo.Collection("mensajes");
@@ -59,6 +69,19 @@ MensajeSchema = new SimpleSchema({
       }
     }
   },
+  conectado:{
+    type: Boolean,
+    label: "Conectado"
+  },
+  fileId: {
+    type: String,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "files"
+      }
+    }
+  },
   desc:{
     type:String,
     label: "Descripción",
@@ -95,4 +118,4 @@ Meteor.methods({
 });
 
 Mensajes.attachSchema ( MensajeSchema );
-Tags.attachSchema( Tag );
+Tags.attachSchema ( Tag );
