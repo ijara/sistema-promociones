@@ -15,11 +15,13 @@
           {{#each mensajes}}
           <div class="panel panel-default">
             <div id="mensaje" class="panel-body">
-              <div id="foto" class="col-md-4">
-                <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
-              </div>
-              <div id="texto" class="col-md-8">
-                {{desc}}
+              <div class="row">
+                <div id="foto" class="col-md-4">
+                  <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
+                </div>
+                <div id="texto" class="col-md-8">
+                  {{desc}}
+                </div>
               </div>
               <div id="tags" class="col-md-12">
                 {{#each tags}}
