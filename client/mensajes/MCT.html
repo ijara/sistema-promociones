@@ -1,3 +1,33 @@
 <template name="MCT">
-  {{>ListadoMensajes}}
+  <!-- inicio listado mensajes -->
+      <div class="container">
+        <div class="row">
+          {{#each mensajes}}
+          <div class="panel panel-default">
+            <div id="mensaje" class="panel-body">
+              <div id="foto" class="col-md-4">
+                <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
+              </div>
+              <div id="texto" class="col-md-8">
+                {{desc}}
+              </div>
+              <div id="tags" class="col-md-12">
+                {{#each tags}}
+                  <a href="/mensajecontag/{{this}}">{{this}}</a>
+                {{/each}}
+              </div>
+              <div class="files">
+                {{#each files}}
+                  {{url}}
+                {{/each}}
+              </div>
+              <div id="foot" class="col-md-12">
+              {{fromNow createdAt}} | <a href="{{_id}}">{{_id}}</a>
+            </div>
+          </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+<!-- fin listado mensajes -->
 </template>

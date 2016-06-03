@@ -8,6 +8,11 @@ Template.ListadoMensajes.helpers({
 Template.MCT.helpers({
   mensajes: function() {
     var tag = FlowRouter.getParam('tag');
-    return Mensajes.find({tags:tag});
+    var items =  Mensajes.find({tags:tag},{sort:{createdAt:-1}});
+    var fecha;
+    items.forEach(function (item) {
+      item.createdAt = moment(item.createdAt).fromNow();
+    });
+    return items;
   }
 });

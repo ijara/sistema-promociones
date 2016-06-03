@@ -7,35 +7,37 @@
       <div class="jumbotron">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
-      {{>ListadoMensajes}}
-      <!-- <div id="listMensajes">
-          {{#each mensajes}}
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <div id="foto" class="col-md-4">
-                  <img src="cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
-                </div>
-                <div id="texto" class="col-md-8">
-                  {{desc}}
-                </div>
-                <div id="tags" class="col-md-12">
-                  {{#each tags}}
-                    {{this}}
-                  {{/each}}
-                </div>
-                <div class="files">
-                  {{#each files}}
-                    {{url}}
-                  {{/each}}
-                </div>
-                <div id="foot" class="col-md-12">
-                  {{createdAt}} | <a href="{{_id}}">{{_id}}</a>
-              </div>
-              </div>
-            </div>
-          {{/each}}
-      </div> -->
     </div>
   </div>
-
+  <!-- inicio listado mensajes -->
+      <div class="container">
+        <div class="row">
+          {{#each mensajes}}
+          <div class="panel panel-default">
+            <div id="mensaje" class="panel-body">
+              <div id="foto" class="col-md-4">
+                <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
+              </div>
+              <div id="texto" class="col-md-8">
+                {{desc}}
+              </div>
+              <div id="tags" class="col-md-12">
+                {{#each tags}}
+                  <a href="/mensajecontag/{{this}}">{{this}}</a>
+                {{/each}}
+              </div>
+              <div class="files">
+                {{#each files}}
+                  {{url}}
+                {{/each}}
+              </div>
+              <div id="foot" class="col-md-12">
+                {{fromNow createdAt}} | <a href="{{_id}}">{{_id}}</a>
+            </div>
+          </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+<!-- fin listado mensajes -->
 </template>
