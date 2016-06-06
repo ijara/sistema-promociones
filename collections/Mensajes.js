@@ -1,3 +1,42 @@
+Perfiles = new Mongo.Collection("perfiles");
+Perfiles.allow({
+    insert:function(userId,doc) {
+      return !!userId
+    },
+    update:function(userId,doc){
+      return !!userId
+    }
+});
+
+Perfil = new SimpleSchema({
+  fileId: {
+    type: String,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "files"
+      }
+    }
+  },
+  desc:{
+    type:String,
+    label: "Descripción",
+    autoform:{
+      type:"textarea"
+    }
+  },
+  usuario:{
+    type:String,
+    label:"Usuario",
+    autoValue:function(){
+      return this.userId
+    },
+    autoform:{
+      type:"hidden"
+    }
+  }
+});
+
 Tags = new Mongo.Collection("tags");
 Tags.allow({
   insert: function(userId,doc){
@@ -21,6 +60,7 @@ Files.allow({
   },
   fetch: null
 });
+
 
 
 Mensajes = new Mongo.Collection("mensajes");
@@ -116,6 +156,6 @@ Meteor.methods({
     Tags.remove({_id:id});
   }
 });
-
+Perfiles.attachSchema ( Perfil )
 Mensajes.attachSchema ( MensajeSchema );
 Tags.attachSchema ( Tag );

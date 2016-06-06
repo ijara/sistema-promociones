@@ -20,7 +20,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
-
+## basicos
 kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
@@ -31,7 +31,9 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-password
+
+##bootstrap
+
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
@@ -42,8 +44,14 @@ natestrauser:select2
 mpowaga:autoform-autocomplete
 ian:accounts-ui-bootstrap-3
 
+##subir imagenes
 cfs:standard-packages
 cfs:gridfs
 cfs:autoform
 
+## tiempos en formato humano
 momentjs:moment
+
+## cuentas de usuario
+accounts-base
+accounts-password
