@@ -1,11 +1,11 @@
 <template name="EditarPerfil">
-  {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update"}}
-                {{> afQuickField name="profile.fileId"}}
-                {{> afQuickField name="profile.desc" rows="6"}}
+{{#autoForm id="EditarPerfil" collection="Meteor.users" doc=currentUser type="update"}}
+{{> afQuickField name="profile.desc" rows="6"}}
+  {{> afQuickField name="profile.fileId" type="cfs-file" collection="files"}}
+ <div class="form-group">
+   <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+{{/autoForm}}
 
-                <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
 
-        {{/autoForm}}
 </template>

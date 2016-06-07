@@ -28,7 +28,6 @@ Perfil = new SimpleSchema({
 });
 
 User = new SimpleSchema({
-
     emails: {
         type: Array,
         // For accounts-password, either emails or username is required, but not both. It is OK to make this
