@@ -1,3 +1,18 @@
 <template name="Perfil">
-  
+  {{#with perfil.profile}}
+  <div class="row">
+    <div class="col-md-4">
+      <img src="" alt="" />
+    </div>
+    <div class="col-md-8">
+      <h4>Biografía</h4>{{desc}}
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h4>Tags</h4>
+      {{#each tags}}
+      <a href="/mensajecontag/{{this}}">{{this}}</a> |
+      {{/each}}
+  </div>
+  {{/with}}
 </template>

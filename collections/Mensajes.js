@@ -24,6 +24,26 @@ Perfil = new SimpleSchema({
     autoform:{
       type:"textarea"
     }
+  },
+  tags:{
+    type:[String],
+    label:'Tag',
+    autoform:{
+      type:"select-multiple",
+      options:function () {
+        return Tags.find().map(function (c){
+          return {label: c.nombre, value: c.nombre};
+        })
+      }
+    }
+  },
+  fechanac:{
+    type:String,
+    label: "Edad"
+  },
+  nombre:{
+    type:String,
+    label:"Nombre"
   }
 });
 
