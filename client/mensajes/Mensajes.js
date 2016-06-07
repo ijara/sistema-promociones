@@ -2,7 +2,6 @@ Template.ListadoMensajes.helpers({
   mensajes: ()=> {
        return Mensajes.find({empresa: Meteor.userId()},{sort:{createdAt:-1}});
   }
-
 });
 
 Template.MCT.helpers({
