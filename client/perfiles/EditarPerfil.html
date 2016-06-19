@@ -1,6 +1,6 @@
 <template name="EditarPerfil">
 {{#autoForm id="EditarPerfil" collection="Meteor.users" doc=currentUser type="update"}}
-  {{> afQuickField name=profile.nombre}}
+  {{> afQuickField name="profile.nombre"}}
   {{> afQuickField name="profile.desc" rows="6"}}
   <!-- {{> afQuickField name="profile.fileId" type="cfs-file" collection="files"}} -->
   {{> afQuickField name="profile.tags" }}
