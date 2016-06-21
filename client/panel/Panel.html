@@ -1,0 +1,33 @@
+<template name="Panel">
+  <h1>Editar Permisos</h1>
+  <table class="table">
+    <thead>
+      <td>
+        id
+      </td>
+      <td>
+        rol
+      </td>
+      <td>
+        email
+      </td>
+    </thead>
+    <tbody>
+      {{#each usuarios}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>
+          {{roles}}
+        </td>
+        <td>
+          {{#each emails}}
+            {{address}}
+          {{/each}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
