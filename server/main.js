@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
+
+
 Accounts.onCreateUser((options,user)=>{
     user.foto = "";
     user.descripcion = "";
@@ -10,4 +12,3 @@ Accounts.onCreateUser((options,user)=>{
 Meteor.startup(() => {
 
 });
-

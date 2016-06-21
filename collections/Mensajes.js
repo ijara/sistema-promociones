@@ -8,6 +8,15 @@ Perfiles.allow({
     }
 });
 
+AdminConfig = {
+  nonAdminRedirectRoute: 'entrySignIn',
+  adminEmails: ['demo@demo.cl'],
+  collections: {
+    Mensajes: {}
+  },
+  userSchema: null,
+};
+
 Perfil = new SimpleSchema({
   fileId: {
     type: String,
@@ -92,17 +101,17 @@ User = new SimpleSchema({
     // Roles.addUsersToRoles(userId, ["admin"], Roles.GLOBAL_GROUP);
     // You can't mix and match adding with and without a group since
     // you will fail validation in some cases.
-    // roles: {
-    //     type: Object,
-    //     optional: true,
-    //     blackbox: true
-    // },
     roles: {
-    type: [String],
-    label: 'Tipo de Usuario',
-    allowedValues: ['cliente', 'organizacion'],
-    defaultValue: ['cliente']
+        type: Object,
+        optional: true,
+        blackbox: true
     },
+    // roles: {
+    // type: [String],
+    // label: 'Tipo de Usuario',
+    // allowedValues: ['cliente', 'organizacion'],
+    // defaultValue: ['cliente']
+    // },
     // In order to avoid an 'Exception in setInterval callback' from Meteor
     heartbeat: {
         type: Date,

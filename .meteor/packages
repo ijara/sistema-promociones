@@ -25,7 +25,7 @@ kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
 ##stolinski:stylus-multi
-##fortawesome:fontawesome
+fortawesome:fontawesome
 spiderable
 fastclick
 raix:handlebar-helpers
