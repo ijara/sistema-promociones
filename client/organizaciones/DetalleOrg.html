@@ -1,0 +1,11 @@
+<template name="DetalleOrg">
+  {{#each organizacion}}
+    {{roles}}
+  {{/each}}
+{{#autoForm id="EditarPerfil" collection="Meteor.users" doc=currentUser type="update"}}
+  {{> afQuickField name="roles"}}
+ <div class="form-group">
+   <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+{{/autoForm}}
+</template>
