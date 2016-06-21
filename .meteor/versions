@@ -8,7 +8,6 @@ aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
-aldeed:tabular@1.4.2
 aldeed:template-extension@3.4.3
 allow-deny@1.0.4
 anti:i18n@0.4.3
@@ -83,8 +82,6 @@ matb33:bootstrap-glyphicons@10.0.0
 mdg:validation-error@0.2.0
 meteor@1.1.14
 meteor-base@1.0.4
-meteorhacks:meteorx@1.0.2
-meteorhacks:unblock@1.1.0
 meteortoys:allthings@3.0.0
 meteortoys:authenticate@3.0.0
 meteortoys:autopub@3.0.0
@@ -100,7 +97,6 @@ meteortoys:status@3.0.0
 meteortoys:sub@3.0.0
 meteortoys:throttle@3.0.0
 meteortoys:toykit@3.0.4
-mfactory:admin-lte@0.0.2
 minifier-css@1.1.11
 minifier-js@1.1.11
 minimongo@1.0.16
@@ -132,9 +128,7 @@ reactive-dict@1.1.7
 reactive-var@1.0.9
 reload@1.1.8
 retry@1.0.7
-reywood:publish-composite@1.4.2
 routepolicy@1.0.10
-sach:flow-db-admin@1.1.5
 service-configuration@1.0.9
 session@1.1.5
 sha@1.0.7
