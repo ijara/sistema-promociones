@@ -56,3 +56,9 @@ momentjs:moment
 accounts-base
 accounts-password
 alanning:roles
+
+## usuarios conectados
+
+mizzao:user-status
+peppelg:on-login-logout
+session

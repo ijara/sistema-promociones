@@ -104,6 +104,11 @@ User = new SimpleSchema({
     allowedValues: ['cliente', 'organizacion'],
     defaultValue: ['cliente']
     },
+    status: {
+    type: Object,
+    optional: true,
+    blackbox: true
+},
     // In order to avoid an 'Exception in setInterval callback' from Meteor
     heartbeat: {
         type: Date,
@@ -209,7 +214,13 @@ MensajeSchema = new SimpleSchema({
     type:String,
     label:"Empresa",
     autoValue:function(){
-      return this.userId
+      if (this.isInsert) {
+        return this.userId;
+      }else if (this.isUpSert) {
+        return {$setOnInsert: this.userId}
+      }else {
+        this.unset();
+      }
     },
     autoform:{
       type:"hidden"
