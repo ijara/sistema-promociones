@@ -1,5 +1,5 @@
 Meteor.publish("allusers",
-  function () {
+  function() {
     return Meteor.users.find({});
   }
 );

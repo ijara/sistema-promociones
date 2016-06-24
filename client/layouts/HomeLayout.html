@@ -30,11 +30,11 @@
               </div>
               <div class="files">
                 {{#each files}}
-                  {{url}}
+                  <a href="/detallemsg/{{url}}">detalle</a>
                 {{/each}}
               </div>
               <div id="foot" class="col-md-12">
-                {{fromNow createdAt}} | <a href="{{_id}}">{{_id}}</a>
+                {{fromNow createdAt}} | <a href="/detallemsg/{{_id}}">detalle</a>
             </div>
           </div>
           </div>

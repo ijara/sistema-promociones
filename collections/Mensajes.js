@@ -101,7 +101,7 @@ User = new SimpleSchema({
     roles: {
     type: [String],
     label: 'Tipo de Usuario',
-    allowedValues: ['cliente', 'organizacion'],
+    allowedValues: ['cliente', 'organizacion','captador','admin'],
     defaultValue: ['cliente']
     },
     status: {
@@ -192,7 +192,11 @@ MensajeSchema = new SimpleSchema({
   },
   conectado:{
     type: Boolean,
-    label: "Conectado"
+    label: "Conectado",
+    defaultValue: true,
+    autoform:{
+      type:"hidden"
+    }
   },
   fileId: {
     type: String,

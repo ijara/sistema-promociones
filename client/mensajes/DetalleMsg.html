@@ -1,0 +1,19 @@
+<template name="DetalleMsg">
+  {{#each mensaje}}
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../cfs/files/files/{{fileId}}" alt="" class="img-thumbnail" />
+      </div>
+      <div class="col-md-8">
+        {{desc}}
+      </div>
+    </div>
+    <div class="row">
+      <div id="tags" class="col-md-12">
+        {{#each tags}}
+          <a href="/mensajecontag/{{this}}">{{this}}</a>
+        {{/each}}
+      </div>
+    </div>
+  {{/each}}
+</template>

@@ -10,3 +10,10 @@ Template.MCT.helpers({
     return Mensajes.find({$and:[{conectado:true},{tags:tag}]},{sort:{createdAt:-1}});
   }
 });
+
+Template.DetalleMsg.helpers({
+  mensaje: function() {
+    var id = FlowRouter.getParam('id');
+    return Mensajes.find({_id: id});
+  }
+});

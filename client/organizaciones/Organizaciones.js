@@ -9,3 +9,4 @@ Template.DetalleOrg.helpers({
     return Meteor.users.findOne({_id : id});
   }
 });
+Meteor.subscribe('allusers');
