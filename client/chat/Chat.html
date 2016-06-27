@@ -1,0 +1,18 @@
+<template name="Chat">
+       <div id="page-content-wrapper">
+          {{> input }}
+          {{> messages }}
+      </div>
+
+</template>
+
+
+<template name="messages">
+  {{#each msgs}}
+    <strong>{{name}}:</strong> {{text}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>chat: <input type="text" id="message"></p>
+</template>

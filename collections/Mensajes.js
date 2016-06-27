@@ -254,6 +254,21 @@ Meteor.users.allow({
 	  remove: function () { return true; }
 });
 
+//chat
+
+ChatRooms = new Meteor.Collection("chatrooms");
+ChatRooms.allow({
+        'insert':function(userId,doc){
+            return true;
+        },
+        'update':function(userId,doc,fieldNames, modifier){
+            return true;
+        },
+        'remove':function(userId,doc){
+            return false;
+        }
+    });
+
 Meteor.users.attachSchema( User );
 Perfiles.attachSchema ( Perfil );
 Mensajes.attachSchema ( MensajeSchema );

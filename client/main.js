@@ -4,6 +4,10 @@ Template.registerHelper('fromNow', function(date) {
     return moment(date).fromNow(true);
 });
 
+Accounts.ui.config({
+   passwordSignupFields: 'USERNAME_AND_EMAIL'
+});
+
 var handle;
 
 Accounts.onLogin(function(){
