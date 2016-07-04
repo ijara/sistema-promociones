@@ -1,25 +1,25 @@
-Template.sidebar.helpers({
-    'onlusr':function(){
-        return Meteor.users.find({ "status.online": true , _id: {$ne: Meteor.userId()} });
-    }
-});
-
-Template.sidebar.events({
-    'click .user':function(){
-        Session.set('currentId',this._id);
-        var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
-        if(res)
-        {
-            //already room exists
-            Session.set("roomid",res._id);
-        }
-        else{
-            //no room exists
-            var newRoom= ChatRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
-            Session.set('roomid',newRoom);
-        }
-    }
-});
+// Template.sidebar.helpers({
+//     'onlusr':function(){
+//         return Meteor.users.find({ "status.online": true , _id: {$ne: Meteor.userId()} });
+//     }
+// });
+//
+// Template.sidebar.events({
+//     'click .user':function(){
+//         Session.set('currentId',this._id);
+//         var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
+//         if(res)
+//         {
+//             //already room exists
+//             Session.set("roomid",res._id);
+//         }
+//         else{
+//             //no room exists
+//             var newRoom= ChatRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
+//             Session.set('roomid',newRoom);
+//         }
+//     }
+// });
 
 Template.messages.helpers({
     'msgs':function(){
