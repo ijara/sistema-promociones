@@ -13,30 +13,30 @@
       <div class="container">
         <div class="row">
           {{#each mensajes}}
-          <div class="panel panel-default col-md-4">
+          <div class="panel panel-default col-md-3">
             <div id="mensaje" class="panel-body">
               <div class="row">
-                <div id="foto" class="col-md-4">
-                  <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
+                <div id="foto" class="col-md-12">
+                  <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-responsive">
                 </div>
-                <div id="texto" class="col-md-8">
+                <div id="texto" class="col-md-12">
                   {{desc}}
                 </div>
               </div>
+            </div>
+            <div class="row">
               <div id="tags" class="col-md-12">
                 {{#each tags}}
-                  <a href="/mensajecontag/{{this}}">{{this}}</a>
+                  <a href="/mensajecontag/{{this}}">{{this}}</a> |
                 {{/each}}
               </div>
-              <div class="files">
-                {{#each files}}
-                  <a href="/detallemsg/{{url}}">detalle</a>
-                {{/each}}
-              </div>
+            </div>
+            <div class="row">
               <div id="foot" class="col-md-12">
                 {{fromNow createdAt}} | <a href="/detallemsg/{{_id}}">detalle</a>
+              </div>
             </div>
-          </div>
+
           </div>
           {{/each}}
         </div>

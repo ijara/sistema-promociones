@@ -21,6 +21,11 @@ Template.DetalleMsg.helpers({
   }
 });
 
+Template.ListadoMensajes.events({
+  "click .fa-trash": function() {
+    Meteor.call('deleteMsg', this._id);
+  }
+});
 
 Template.DetalleMsg.onRendered(function() {
   var idmensaje = FlowRouter.getParam('id');

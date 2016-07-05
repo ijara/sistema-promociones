@@ -230,7 +230,7 @@ MensajeSchema = new SimpleSchema({
       type:"hidden"
     }
   },
-  
+
   createdAt:{
     type:Date,
     label:"Created At",
@@ -246,6 +246,9 @@ MensajeSchema = new SimpleSchema({
 Meteor.methods({
   deleteTag: function (id) {
     Tags.remove({_id:id});
+  },
+  deleteMsg: function(id) {
+    Mensajes.remove({_id:id});
   }
 });
 

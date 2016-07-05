@@ -6,6 +6,9 @@
           <div class="panel panel-default">
             <div id="mensaje" class="panel-body">
               <div class="row">
+                <div id="trash-icon">
+                  <i class="glyphicon glyphicon-trash fa-trash" onClick="alerta()"></i>
+                </div>
                 <div id="foto" class="col-md-4">
                   <img src="../cfs/files/files/{{fileId}}" alt="..." class="img-thumbnail">
                 </div>
@@ -32,4 +35,9 @@
         </div>
       </div>
 <!-- fin listado mensajes -->
+<script charset="utf-8">
+  function alerta() {
+    confirm("¿Esta seguro?");
+  }
+</script>
 </template>

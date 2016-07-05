@@ -1,14 +1,29 @@
 AutoForm.debug();
 Template.registerHelper('fromNow', function(date) {
-  if (date)
+  if (date){
+    moment.locale('es');
     return moment(date).fromNow(true);
+  }
 });
 
 Accounts.ui.config({
    passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
-var handle;
+Accounts.onLogout(function(){
+    handle = Session.get('user');
+    console.log(handle);
+    var mismensajes = Mensajes.find({"empresa" : handle});
+    console.log(mismensajes);
+    mismensajes.forEach(function(item){
+      Mensajes.update({_id:item._id}, {$set:{
+        "conectado": false
+      }})
+  });
+  handle = Session.set("user", "");
+});
+
+var handle = Meteor.user();
 
 Accounts.onLogin(function(){
     handle = Meteor.user();
@@ -23,16 +38,5 @@ Accounts.onLogin(function(){
 });
 
 
-Accounts.onLogout(function(){
-    handle = Session.get('user');
-    console.log(handle);
-    var mismensajes = Mensajes.find({"empresa" : handle});
-    console.log(mismensajes);
-    mismensajes.forEach(function(item){
-      Mensajes.update({_id:item._id}, {$set:{
-        "conectado": false
-      }})
-  })
-});
 
 Meteor.subscribe('allusers');

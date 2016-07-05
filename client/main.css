@@ -11,15 +11,52 @@ negro     #2C3333
 
 */
 
+/*navbar*/
+
+.navbar{
+  background-color: #61A54D;
+}
+.navbar-default .navbar-nav  > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: white;
+}
+
+.navbar-default .navbar-brand{
+  color: white;
+}
+
+div.navbar.navbar-default{
+  border: #B9CE21;
+}
+
+/*body*/
+
 body{
   background-color: #61A54D;
 }
 a{
   color: #B9CE21 ;
 }
+a:hover{
+  color: #B9CE21 ;
+}
 
 h1,h2,h3{
   color: #2C3333;
+}
+
+#texto{
+
+}
+#trash-icon{
+  text-align: right;
+    margin-right: 20px;
+}
+.panel {
+  margin-right:1%;
 }
 
 .jumbotron{

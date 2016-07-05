@@ -50,7 +50,7 @@ cfs:gridfs
 cfs:autoform
 
 ## tiempos en formato humano
-momentjs:moment
+rzymek:moment-locale-es
 
 ## cuentas de usuario
 accounts-base
