@@ -1,1 +1,31 @@
 /* CSS declarations go here */
+
+/*colores
+http://www.colourlovers.com/palette/4284847/Righteous_Plague
+
+amarillo  #B9CE21
+verde     #61A54D
+celeste   #45708C
+azul      #384E66
+negro     #2C3333
+
+*/
+
+body{
+  background-color: #61A54D;
+}
+a{
+  color: #B9CE21 ;
+}
+
+h1,h2,h3{
+  color: #2C3333;
+}
+
+.jumbotron{
+  background-color: #45708C;
+}
+.panel{
+  background-color: #45708C;
+  border-color: #384E66;
+}
