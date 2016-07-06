@@ -11,11 +11,19 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class=""><a href="/tags">Tags</a></li>
-            <li class=""><a href="/mensajes">Mensajes</a></li>
-            <li class=""><a href="/perfil/">Perfil</a></li>
-            <li class=""><a href="/editarperfil">Editar Perfil</a></li>
-            <li class=""><a href="/organizaciones">Organizaciones</a></li>
+          {{#if isInRole 'admin,organizaciones'}}
+          <li class=""><a href="/tags">Tags</a></li>
+          <li class=""><a href="/mensajes">Mensajes</a></li>
+          <li class=""><a href="/editarperfil">Editar Perfil</a></li>
+          {{/if}}
+          {{#if isInRole 'admin,cliente'}}
+              <li class=""><a href="/perfil/">Perfil</a></li>
+          {{/if}}
+          {{#if isInRole 'captador'}}
+          <li class=""><a href="/organizaciones">Organizaciones</a></li>
+
+          {{/if}}
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {{> loginButtons}} <!-- here -->
