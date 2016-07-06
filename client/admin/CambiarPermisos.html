@@ -1,0 +1,8 @@
+<template name="CambiarPermisos">
+  {{#autoForm id="CambiarPermisos" collection="Meteor.users" doc=usuario type="update"}}
+    {{> afQuickField name="roles"}}
+   <div class="form-group">
+     <button type="submit" class="btn btn-primary">Actualizar</button>
+  </div>
+  {{/autoForm}}
+</template>

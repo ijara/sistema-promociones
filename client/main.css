@@ -35,7 +35,7 @@ div.navbar.navbar-default{
 /*body*/
 
 body{
-  background-color: #61A54D;
+  background-color: #FFF8DC;
 }
 a{
   color: #B9CE21 ;
@@ -60,9 +60,10 @@ h1,h2,h3{
 }
 
 .jumbotron{
-  background-color: #45708C;
+  background-color: white;
+  border: 1px solid #384E66;
 }
 .panel{
-  background-color: #45708C;
+  background-color: white;
   border-color: #384E66;
 }
