@@ -9,4 +9,23 @@ Template.DetalleOrg.helpers({
     return Meteor.users.findOne({_id : id});
   }
 });
+
+Template.DetalleOrg.events({
+  "click .btnaceptar":function() {
+    var id = FlowRouter.getParam('id');
+    Meteor.users.update({_id:id}, {$set:{
+      "roles":['organizacion']
+    }});
+  },
+  "click .btncancelar":function() {
+    var id = FlowRouter.getParam('id');
+    Meteor.users.update({_id:id}, {$set:{
+      "roles":['cliente']
+    }});
+  },
+});
+
+
+
+
 Meteor.subscribe('allusers');

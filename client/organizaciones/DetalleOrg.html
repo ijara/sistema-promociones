@@ -1,8 +1,44 @@
 <template name="DetalleOrg">
-{{#autoForm id="EditarOrganizacion" collection="Meteor.users" doc=organizacion type="update"}}
+<!-- {{#autoForm id="EditarOrganizacion" collection="Meteor.users" doc=organizacion type="update"}}
   {{> afQuickField name="roles"}}
  <div class="form-group">
-   <button type="submit"  class="btn btn-primary">Actualizar</button>
+   <button type="submit" class="btn btn-primary">Actualizar</button>
 </div>
-{{/autoForm}}
+{{/autoForm}} -->
+  <div class="row">
+    <div class="col-md-12" id="info de empresa">
+      <!-- Descripcion del captador -->
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- aqui van las opciones -->
+      <div class="col-md-3">
+        <button id="botonaceptar" class="btn btn-primary btnaceptar">Aceptar</button>
+      </div>
+      <div class="col-md-3">
+        <button id="botoncancelar" class="btn btn-danger btncancelar">Cancelar</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!-- aqui va informacion relevante a la organizacion -->
+      {{#with organizacion}}
+      <ul>
+        {{#each organizacion.emails}}
+          <li>{{address}}</li>
+        {{/each}}
+        {{#each roles}}
+          <li>{{this}}</li>        
+        {{/each}}
+      </ul>
+      {{/with}}
+    </div>
+  </div>
+
+
+
+
+
 </template>
