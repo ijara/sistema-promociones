@@ -11,17 +11,16 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          {{#if isInRole 'admin,organizaciones'}}
+          {{#if isInRole 'organizacion'}}
           <li class=""><a href="/tags">Tags</a></li>
           <li class=""><a href="/mensajes">Mensajes</a></li>
           <li class=""><a href="/editarperfil">Editar Perfil</a></li>
           {{/if}}
-          {{#if isInRole 'admin,cliente'}}
+          {{#if isInRole 'cliente'}}
               <li class=""><a href="/perfil/">Perfil</a></li>
           {{/if}}
           {{#if isInRole 'captador'}}
-          <li class=""><a href="/organizaciones">Organizaciones</a></li>
-
+            <li class=""><a href="/organizaciones">Organizaciones</a></li>
           {{/if}}
 
         </ul>
