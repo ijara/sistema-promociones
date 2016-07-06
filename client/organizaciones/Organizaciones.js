@@ -29,7 +29,4 @@ Template.DetalleOrg.events({
   },
 });
 
-
-
-
 Meteor.subscribe('allusers');
