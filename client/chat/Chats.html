@@ -1,0 +1,25 @@
+<template name="Chats">
+  <table class="table">
+    <thead>
+      <td>
+        id
+      </td>
+      <td>
+        link
+      </td>
+    </thead>
+    <tbody>
+      <tr>
+        {{#each chats}}
+          <td>
+            {{_id}}
+          </td>
+          <td>
+            <a href="/chat/{{_id}}">Ir al chat</a>
+          </td>
+        {{/each}}
+      </tr>
+    </tbody>
+
+  </table>
+</template>

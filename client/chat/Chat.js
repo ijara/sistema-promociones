@@ -21,6 +21,12 @@
 //     }
 // });
 
+Template.Chats.helpers({
+  'chats': function() {
+    return ChatRooms.find({"chatIds":{$ne:[Meteor.userId()]}});
+  }
+});
+
 Template.messages.helpers({
     'msgs':function(){
         var result=ChatRooms.findOne({_id:Session.get('roomid')});
@@ -28,6 +34,11 @@ Template.messages.helpers({
           return result.messages;
         }
     }
+});
+
+Template.Chat.onRendered(function () {
+  var id = FlowRouter.getParam('empresa');
+  Session.set("roomid", id);
 });
 
 Template.input.events = {
