@@ -48,6 +48,43 @@ Perfil = new SimpleSchema({
   }
 });
 
+Solicitudes = new Meteor.Collection("solicitudes");
+Solicitud = new SimpleSchema({
+  createdAt:{
+    type:Date,
+    label:"Created At",
+    autoValue:function () {
+      return new Date()
+    },
+    autoform:{
+      type:"hidden"
+    }
+  },
+  razones:{
+    type: String,
+    label: "Razones",
+    autoform:{
+      type: "textarea"
+    }
+  },
+  idusuario:{
+    type:String,
+    label:"Usuario",
+    autoValue:function(){
+      if (this.isInsert) {
+        return this.userId;
+      }else if (this.isUpSert) {
+        return {$setOnInsert: this.userId}
+      }else {
+        this.unset();
+      }
+    },
+    autoform:{
+      type:"hidden"
+    }
+  }
+});
+
 User = new SimpleSchema({
     emails: {
         type: Array,
@@ -273,6 +310,19 @@ ChatRooms.allow({
         }
     });
 
+Solicitudes.allow({
+  insert: function (userId, document) {
+    return true;
+  },
+  update: function (userId, document, fieldNames, modifier) {
+    return true;
+  },
+  remove: function (userId, document) {
+    return true;
+  }
+});
+
+Solicitudes.attachSchema ( Solicitud );
 Meteor.users.attachSchema( User );
 Perfiles.attachSchema ( Perfil );
 Mensajes.attachSchema ( MensajeSchema );

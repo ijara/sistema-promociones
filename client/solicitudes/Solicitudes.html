@@ -1,0 +1,30 @@
+<template name="Solicitudes">
+  <table class="table">
+    <thead>
+      <td>
+        id
+      </td>
+      <td>
+        razon
+      </td>
+      <td>
+        decision
+      </td>
+    </thead>
+    <tbody>
+      {{#each solicitudes}}
+        <tr>
+          <td>
+            {{_id}}
+          </td>
+          <td>
+            {{razones}}
+          </td>
+          <td>
+            <a href="/detalleorg/{{idusuario}}">aceptar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

@@ -7,6 +7,10 @@ Template.DetalleOrg.helpers({
   organizacion: function() {
     var id = FlowRouter.getParam('id');
     return Meteor.users.findOne({_id : id});
+  },
+  solicitud: function() {
+    var id = FlowRouter.getParam('id');
+    return Solicitudes.findOne({idusuario:id});
   }
 });
 

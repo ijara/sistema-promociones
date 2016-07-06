@@ -1,4 +1,7 @@
 AutoForm.debug();
+
+accountsUIBootstrap3.setLanguage('es'); // for Spanish
+
 Template.registerHelper('fromNow', function(date) {
   if (date){
     moment.locale('es');
