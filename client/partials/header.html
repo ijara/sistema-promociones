@@ -12,16 +12,19 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           {{#if isInRole 'organizacion,cliente'}}
-            <li class=""><a href="/tags">Tags</a></li>
             <li class=""><a href="/mensajes">Mensajes</a></li>
             <li class=""><a href="/editarperfil">Editar Perfil</a></li>
             <li class=""><a href="/perfil/">Mostrar Perfil</a></li>
-          {{/if}}
-          
-          {{#if isInRole 'cliente,organizacion' }}
             <li class=""><a href="/chats">Chats</a></li>
           {{/if}}
+          {{#if isInRole 'organizacion' }}
+            <li class=""><a href="/tags">Tags</a></li>
+          {{/if}}
+          {{#if isInRole 'cliente' }}
+            <li class=""><a href="/nuevasolicitud">Nueva Solicitud</a></li>
+          {{/if}}
           {{#if isInRole 'captador'}}
+            <li><a href="/solicitudes">Solicitudes</a></li>
             <li class=""><a href="/organizaciones">Organizaciones</a></li>
           {{/if}}
           {{#if isInRole 'admin' }}

@@ -18,10 +18,10 @@
     <div class="col-md-6">
       <!-- aqui van las opciones -->
       <div class="col-md-3">
-        <button id="botonaceptar" class="btn btn-primary btnaceptar">Aceptar</button>
+        <button id="botonaceptar" class="btn btn-primary btnaceptar" onClick="listo()">Aceptar</button>
       </div>
       <div class="col-md-3">
-        <button id="botoncancelar" class="btn btn-danger btncancelar">Cancelar</button>
+        <button id="botoncancelar" class="btn btn-danger btncancelar" onClick="fallo()">Cancelar</button>
       </div>
     </div>
     <div class="col-md-6">
@@ -38,4 +38,14 @@
       {{/with}}
     </div>
   </div>
+  <script charset="utf-8">
+    function listo() {
+      alert("Cambiado con exito");
+    }
+  </script>
+  <script charset="utf-8">
+    function fallo() {
+      alert("Usuario: Cliente");
+    }
+  </script>
 </template>
