@@ -9,16 +9,18 @@
       </td>
     </thead>
     <tbody>
-      <tr>
+
         {{#each chats}}
+        <tr>
           <td>
             {{_id}}
           </td>
           <td>
             <a href="/chat/{{_id}}">Ir al chat</a>
           </td>
+          </tr>
         {{/each}}
-      </tr>
+
     </tbody>
 
   </table>

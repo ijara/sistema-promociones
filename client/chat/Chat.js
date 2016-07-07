@@ -23,7 +23,7 @@
 
 Template.Chats.helpers({
   'chats': function() {
-    return ChatRooms.find({"chatIds":{$ne:[Meteor.userId()]}});
+    return ChatRooms.find({"chatIds":{$all:[Meteor.userId()]}});
   }
 });
 
